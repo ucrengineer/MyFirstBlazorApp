@@ -11,8 +11,12 @@
 @code {
     private int currentCount = 0;
 
+// Make sure to add attribute or a InvalidOperationException will be thrown
+    [Parameter]
+    public int IncrementAmount {get;set;} = 1;
+
     private void IncrementCount()
     {
-        currentCount++;
+        currentCount += IncrementAmount;
     }
 }
